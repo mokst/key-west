@@ -15,5 +15,6 @@ namespace PeopleSearch2.Data
         public string LastName { get; set; }
         public int Age { get; set; }
         public Address Address { get; set; }
+        public Interest Interests { get; set; }
     }
 }

@@ -48,7 +48,9 @@ namespace PeopleSearch2.Controllers
                 .FromSql("SELECT * FROM dbo.People " +
                 "WHERE LastName + ' ' + FirstName LIKE {0} " +
                 "OR FirstName + ' ' + LastName LIKE {0}", likeName)
+                .Include(i => i.Interests)
                 .Include(p => p.Address)
+                
                 .ToListAsync();
 
             if (person == null)
